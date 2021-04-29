@@ -3,6 +3,15 @@
     --white: #ffffff;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100vh;
+}
+
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
     color: var(--white);
@@ -13,6 +22,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    min-height: 100vh;
 }
 
 .container {
@@ -122,9 +132,14 @@ body {
     animation: background-an 1s linear 1;
 }
 
-.btns button:hover {
+.btns button:hover, .btns button:active {
     box-shadow: 0 0 0 35px rgba(255, 255, 255, 0.05);
     border-radius: 50%;
+}
+
+.btns button:focus, .rules-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 35px rgba(255, 255, 255, 0.1);
 }
 
 .rules {
@@ -151,8 +166,8 @@ body {
 }
 
 @keyframes background-an {
-    50% {
-        box-shadow: 0 -210px 70px -120px rgb(5, 7, 44) inset, 0 -280px 70px -120px rgb(216, 208, 216) inset;
+    40% {
+        box-shadow: 0 -280px 70px -120px rgba(255, 255, 255, 0.05) inset;
     }
 }
 
@@ -195,22 +210,19 @@ body {
     cursor: pointer;
 }
 
-.again-btn:hover {
+.again-btn:hover, .again-btn:active, .again-btn:focus {
     color: #DB2E4D;
+    outline: none;
 }
 
 .btn-win::before {
     position: absolute;
     content: '';
-    left: -2%;
-    top: 4%;
+    left: 1%;
+    top: 1%;
     bottom: 0;
     width: 203px;
     height: 203px;
-    background-color: #FFFFFF;
-    mix-blend-mode: normal;
-    opacity: 0.05;
-    ;
     box-shadow: 0 0 0 35px rgba(255, 255, 255, 0.05);
     border-radius: 50%;
     animation: animate 2s linear infinite;
@@ -219,8 +231,8 @@ body {
 .btn-win::after {
     position: absolute;
     content: '';
-    left: -2%;
-    top: 4%;
+    left: 1%;
+    top: 1%;
     bottom: 0;
     width: 203px;
     height: 203px;
@@ -283,7 +295,7 @@ body {
     margin: 0 auto;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 668px) {
     .btns {
         grid-column-gap: 51px;
         grid-row-gap: 51px;
@@ -325,23 +337,20 @@ body {
     .score-wrapper {
         padding: 10px;
     }
-    
     .play {
         flex-wrap: wrap;
     }
-    
     .your {
-        order: 1
+        order: 1;
     }
     .enemy {
         order: 2;
     }
-
     .again {
         order: 3;
-        flex-grow: 1;
+        flex-basis: 100%;
+        width: 0;
     }
-
     .again-text {
         margin-bottom: 16px;
     }
@@ -353,19 +362,12 @@ body {
         width: 130px;
         height: 130px;
     }
-
-
-    .modal-rules {
-        width: 100%;
-        height: 100%;
-    }
-
     .modal-wrapper {
-        border-radius:  0;
-        margin:  0;
+        border-radius: 0;
+        margin: 0;
         height: 100%;
+        max-width: none;
     }
-
     .text {
         flex-direction: column;
     }
@@ -373,10 +375,9 @@ body {
         padding-bottom: 100px;
         padding-top: 55px;
     }
-
     .modal-close-btn {
         position: absolute;
-        bottom: 50px;
+        bottom: 12%;
     }
 }
 
