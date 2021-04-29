@@ -368,6 +368,10 @@ body {
         height: 100%;
         max-width: none;
     }
+    .modal-rules {
+        height: 100vh;
+    }
+    
     .text {
         flex-direction: column;
     }
