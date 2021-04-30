@@ -486,7 +486,7 @@ body {
     }
     .modal-rules {
         height: 100vh;
-        position: absolute;
+        position: fixed;
     }
     
     .text {
