@@ -232,6 +232,7 @@ body {
     40% {
         -webkit-box-shadow: 0 -280px 70px -120px #ffffff0d inset, 0 -290px 60px -110px #240663 inset;
                box-shadow: 0 -280px 70px -120px #ffffff0d inset, 0 -290px 60px -110px #240663 inset;
+        -webkit-appearance: none;
     }
 }
 
