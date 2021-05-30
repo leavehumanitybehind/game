@@ -1,2 +1,2 @@
 Игра камень-ножницы-бумага на чистом JS
-Демо: ubitinonevami.github.io/game
+Демо: https://ubitinonevami.github.io/game
